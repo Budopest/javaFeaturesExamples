@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class SimpleGenericExample {
     public static void main(String[] args){
 
-            }
+        BoundGenericExample<Integer> integerBoundGenericExample = new BoundGenericExample<>();
+        integerBoundGenericExample.printAverage();
+    }
+
 }
 
 class Gen<T>{
