@@ -22,7 +22,6 @@ public class SimpleGenericExample {
 
 class Gen<T>{
 
-
     ArrayList<T> objectsList;
 
     public Gen(T obj){
