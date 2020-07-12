@@ -48,6 +48,7 @@ public class BoundWildCardExample {
         * will not compile as TwoD has elements of twoDimensions only
         */
         showXYZ(new Coords<>(ThreeD));
+        showXY(new Coords<>(ThreeD));
 
     }
 }

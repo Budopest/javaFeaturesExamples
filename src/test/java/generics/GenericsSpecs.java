@@ -38,4 +38,19 @@ public class GenericsSpecs {
         WildCardGenericExample<Double> doubleArray = new WildCardGenericExample<Double>(3.5,2.5,3.0);
         assertTrue(intArray.isSameAverage(doubleArray),()->"Average of both arrays should be the same");
     }
+    @Test
+    public void numberIsInTheArray(){
+        int number = 5;
+        Integer[] numbers = {5,6,7,14,4};
+        assertTrue(new GeniricMethodExample().isInArray(number,numbers),()->"number 5 should be in the array");
+
+    }
+    @Test
+    public void stringIsnotInTheArray(){
+        String name = "Mohamed";
+        String[] names = {"Abdo","Ahmed","Rana","Radwa"};
+        assertTrue(!new GeniricMethodExample().isInArray(name,names),()->"name mohamed isnot in the array");
+
+    }
+
 }
