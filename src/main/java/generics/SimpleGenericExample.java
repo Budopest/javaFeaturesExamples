@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 public class SimpleGenericExample {
     public static void main(String[] args){
+        /*
+        Gen<Integer> intGeneric = new Gen<Integer>("Hello");
+        won't compile as generics provide type saftey
+        *
+        BoundGenericExample<String> integerBoundGenericExample = new BoundGenericExample<String>();
+        won't compile as string doesnt satisfy the bound condition
+        */
 
-        BoundGenericExample<Integer> integerBoundGenericExample = new BoundGenericExample<>();
-        integerBoundGenericExample.printAverage();
     }
 
 }
