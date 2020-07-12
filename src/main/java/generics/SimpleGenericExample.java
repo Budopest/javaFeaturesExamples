@@ -11,6 +11,10 @@ public class SimpleGenericExample {
         BoundGenericExample<String> integerBoundGenericExample = new BoundGenericExample<String>();
         won't compile as string doesnt satisfy the bound condition
         */
+        WildCardGenericExample<Integer> intArray = new WildCardGenericExample<>(1,3,5);
+        WildCardGenericExample<Double> doubleArray = new WildCardGenericExample<Double>(3.5,2.5,3.0);
+        System.out.println(intArray.isSameAverage(doubleArray));
+
 
     }
 

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenericsSpecs {
 
@@ -25,5 +26,16 @@ public class GenericsSpecs {
         BoundGenericExample<Integer> intGeneric = new BoundGenericExample<>();
         assertEquals(0,intGeneric.getAverageinDouble(),()-> "Average should be 0 ");
     }
-
+    @Test
+    public void averageOfDoubleAndIntAEmptyArraysAreTheSame(){
+        WildCardGenericExample<Integer> intArray = new WildCardGenericExample<>();
+        WildCardGenericExample<Double> doubleArray = new WildCardGenericExample<Double>();
+        assertTrue(intArray.isSameAverage(doubleArray),()->"Average of both empty arrays should be the same =0");
+    }
+    @Test
+    public void averageOfDoubleAndIntAArraysAreTheSame(){
+        WildCardGenericExample<Integer> intArray = new WildCardGenericExample<>(1,3,5);
+        WildCardGenericExample<Double> doubleArray = new WildCardGenericExample<Double>(3.5,2.5,3.0);
+        assertTrue(intArray.isSameAverage(doubleArray),()->"Average of both arrays should be the same");
+    }
 }
