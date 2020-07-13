@@ -20,6 +20,22 @@ public class SimpleFunctionalInterface {
         };
         System.out.println(reverse.specialFunc("oops"));
 
+        String input = "\nhi this IS uppercase\n";
+        // Lambda expression can be passed to method argument
+        System.out.println(stringOp(
+                (word)-> word.toUpperCase(),
+                input
+        ));
+        //Method refrence can be used here to replace the lambda expression
+        System.out.println(stringOp(
+                String::toLowerCase,
+                input
+        ));
+
+
+    }
+    public static String stringOp(StringFunc stringFunc,String word){
+        return stringFunc.func(word);
     }
 }
 interface NumberTester{
@@ -30,3 +46,6 @@ interface GeniricI<T>{
     // This means that it is compatible with any lambda expression that takes one parameter and returns a value of the same type.
     T specialFunc(T obj);
 }
+interface StringFunc{
+    String func(String word);
+        }
