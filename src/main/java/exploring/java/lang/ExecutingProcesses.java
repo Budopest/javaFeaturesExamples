@@ -19,7 +19,7 @@ public class ExecutingProcesses {
     }
 
 
-    static void memoryManagement(){
+    private static void memoryManagement(){
         Runtime runtime = Runtime.getRuntime();
 
         Integer numbers[] = new Integer[1000];
@@ -33,7 +33,7 @@ public class ExecutingProcesses {
         System.out.println("Free memory after garpage collection: " + runtime.freeMemory());
 
         //Allocate the integer array
-        for(Integer i: numbers) i=Integer.valueOf(5);
+        for(Integer i: numbers) i= Integer.valueOf(5);
 
         System.out.println("Total memory: " + runtime.totalMemory());
         System.out.println("initial Free memory: " + runtime.freeMemory());
@@ -44,7 +44,7 @@ public class ExecutingProcesses {
         System.out.println("Free memory after garpage collection: " + runtime.freeMemory());
 
     }
-    static void executingProcesses(){
+    private static void executingProcesses(){
         Runtime r = Runtime.getRuntime();
         Process p = null;
         /*
@@ -55,9 +55,7 @@ public class ExecutingProcesses {
             p = r.exec("gedit");
             // wait for child processes to finish
             p.waitFor();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println(p.exitValue());
