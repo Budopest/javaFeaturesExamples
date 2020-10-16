@@ -1,7 +1,34 @@
 package lambda;
 
 public class SimpleFunctionalInterface {
+
+    static int x = 0;
+    int y =0;
+
+    public void testAccessability(){
+
+        int z = 0;
+
+        GeniricI<Integer> testAccess = (num) -> {
+            //instance and static variables can be accessed and modified
+            System.out.println(x);
+            System.out.println(y);
+            // local variables can be accessed only
+            System.out.println(z);
+            x++;
+            y++;
+            // this can be accessed
+            this.y = 0;
+            // error because local variables canot be modified in lambda
+            // z++;
+
+            return 0;
+        };
+
+    }
+
     public static void main(String[] args) {
+
         GeniricI<Integer> factorial = (num) -> {
             int result = 1;
             for (int i = 2; i <= num; i++) {

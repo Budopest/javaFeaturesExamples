@@ -2,6 +2,10 @@ package generics;
 
 import java.util.ArrayList;
 
+    /*
+    *In addition to generic classes and methods, you can also have generic interfaces. Generic interfaces are specified just like generic classes.
+    *
+     */
 public class SimpleGenericExample {
     public static void main(String[] args){
         /*

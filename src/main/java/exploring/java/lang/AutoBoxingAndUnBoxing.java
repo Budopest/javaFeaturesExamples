@@ -15,5 +15,58 @@ public class AutoBoxingAndUnBoxing {
         // Manually unwrapping
         num = number.intValue();
 
+
     }
+}
+class book{
+    book(){
+        System.out.println("this is a book");
+    }
+    String getName(int index){
+            return "book";
+        }
+    String getName(){
+        return "No index";
+    }
+    /*
+    Cannot over LOad with changing return type only
+    int getName(){
+
+        return 0;
+    }
+    */
+    /*
+    * return type can be changed or kept but arguments must change
+    * */
+    int getName(double index){
+        return 0;
+    }
+}
+class AudioBook extends book{
+    AudioBook(){
+        System.out.println("this is an Audio book");
+
+    }
+    String getName(){
+        return "Audio book";
+    }
+    /*
+    return type should be the same or covariant
+    return type should be subtype of the original
+    or can converted to a unchecked conversion(After erasuer)
+        @Override
+    int getName(int index){
+        return 0;
+    }
+     */
+
+    /*
+    * access modifier cannot be more restrict when overriding a method
+    * also private, static, final methods cannot be overridden they are local to thier class
+    private String getName(int index){
+        return "Audio book";
+    }
+    * */
+
+
 }
