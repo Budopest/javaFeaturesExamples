@@ -1,6 +1,7 @@
 package exploring.stream.api;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.stream.Stream;
 
 public class MappingStreamsExample {
@@ -19,6 +20,10 @@ public class MappingStreamsExample {
         //use for each and toString to print the names
         namesStream.forEach((n)-> System.out.println(n));
 
+        //use iterator with stream
+        Iterator<FullInfo> fullInfoIterator = employee.stream().iterator();
+        while(fullInfoIterator.hasNext()) System.out.println(fullInfoIterator.next());
+
 
 
     }
@@ -28,6 +33,17 @@ class FullInfo{
     private String firstName;
     private String lastName;
     private String phoneNumber;
+
+    @Override
+    public String toString() {
+        return "FullInfo{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     private String email;
 
     public FullInfo(String firstName, String lastName, String phoneNumber, String email) {
